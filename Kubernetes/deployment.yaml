@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: number-generator
+  labels:
+    app: number-generator
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: number-generator
+  template:
+    metadata:
+      labels:
+        app: number-generator
+    spec:
+      containers:
+        - name: number-generator
+          image: ertaxhixho/devops_dk:latest
+          ports:
+            - containerPort: 80
