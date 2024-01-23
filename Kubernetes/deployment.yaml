@@ -18,4 +18,4 @@ spec:
         - name: number-generator
           image: ertaxhixho/devops_dk:latest
           ports:
-            - containerPort: 80
+            - containerPort: 8080

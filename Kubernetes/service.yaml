@@ -9,20 +9,7 @@ spec:
       targetPort: 8080
   selector:
     app: number-generator
-  type: ClusterIP
-
----
-apiVersion: monitoring.coreos.com/v1
-kind: ServiceMonitor
-metadata:
-  name: number-generator-service-monitor
-spec:
-  selector:
-    matchLabels:
-      app: number-generator
-  endpoints:
-    - port: http-traffic
-      path: "/actuator/prometheus"
+  type: NodePort
 
 
 # kubectl apply -f service.yaml
